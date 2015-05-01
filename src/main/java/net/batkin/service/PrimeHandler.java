@@ -38,14 +38,14 @@ public class PrimeHandler implements QuestionHandler {
     }
 
     private boolean isPrime(int val) {
-        logger.info("isPrime(" + val + ")");
+//        logger.info("isPrime(" + val + ")");
         if (val <= 2) {
             return true;
         }
         int sqrt = (int) Math.sqrt(val);
-        logger.info("sqrt=" + sqrt);
+//        logger.info("sqrt=" + sqrt);
         for (int i = 2; i < sqrt; i++) {
-            logger.info(val + " % " + i + " = " + (val % i));
+//            logger.info(val + " % " + i + " = " + (val % i));
             if (val % i == 0) {
                 return false;
             }
