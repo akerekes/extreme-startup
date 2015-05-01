@@ -18,9 +18,9 @@ public class MultiOperatorHandler implements QuestionHandler {
             Scanner scanner = new Scanner(plusMatcher.group(1));
             long accu = scanner.nextLong();
             while (scanner.hasNext()) {
-                String op = scanner.next("[^\\d]+");
+                String op = scanner.findInLine("[^\\d]+");
                 int arg = scanner.nextInt();
-                accu = calc(accu, op, arg);
+                accu = calc(accu, op.trim(), arg);
             }
             return "" + accu;
         }
