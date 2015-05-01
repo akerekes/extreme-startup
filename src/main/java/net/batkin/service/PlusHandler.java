@@ -25,6 +25,8 @@ public class PlusHandler implements QuestionHandler {
                 return "" + (i1 * i2);
             } else if (op.equals("minus")) {
                 return "" + (i1 - i2);
+            } else if (op.equals("to the power of")) {
+                return "" + Math.pow(i1, i2);
             }
 
 
