@@ -22,7 +22,7 @@ public class HandlerSet {
 
         SimpleHandler simple = new SimpleHandler();
         simple.addQA("what colour is a banana", "yellow");
-//        simple.addQA("", "");
+        simple.addQA("who is the Prime Minister of Great Britain", "David Cameron");
 //        simple.addQA("", "");
 //        simple.addQA("", "");
 //        simple.addQA("", "");
