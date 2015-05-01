@@ -3,13 +3,21 @@ package net.batkin;
 import net.batkin.service.*;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class HandlerSet {
 
-    private QuestionHandler[] handlers;
+    private List<QuestionHandler> handlers;
 
     public HandlerSet() {
-        handlers = new QuestionHandler[] {new PlusHandler(), new LargestHandler(), new SquareCubeHandler(), new PrimeHandler(), new FibHandler()};
+        handlers = new ArrayList<QuestionHandler>();
+        handlers.add(new PlusHandler());
+        handlers.add(new LargestHandler();
+        handlers.add(new SquareCubeHandler();
+        handlers.add(new PrimeHandler();
+        handlers.add(new FibHandler();
     }
 
     public String answerQuestion(String question) {
