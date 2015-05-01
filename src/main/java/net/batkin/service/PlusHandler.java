@@ -3,6 +3,7 @@ package net.batkin.service;
 import net.batkin.NotAnswerableException;
 import net.batkin.QuestionHandler;
 
+import java.math.BigInteger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -26,7 +27,7 @@ public class PlusHandler implements QuestionHandler {
             } else if (op.equals("minus")) {
                 return "" + (i1 - i2);
             } else if (op.equals("to the power of")) {
-                return "" + Math.pow(i1, i2);
+                return "" + new BigInteger(""+i1).pow(i2);
             }
 
 
