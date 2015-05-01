@@ -14,10 +14,10 @@ public class HandlerSet {
     public HandlerSet() {
         handlers = new ArrayList<QuestionHandler>();
         handlers.add(new PlusHandler());
-        handlers.add(new LargestHandler();
-        handlers.add(new SquareCubeHandler();
-        handlers.add(new PrimeHandler();
-        handlers.add(new FibHandler();
+        handlers.add(new LargestHandler());
+        handlers.add(new SquareCubeHandler());
+        handlers.add(new PrimeHandler());
+        handlers.add(new FibHandler());
     }
 
     public String answerQuestion(String question) {
