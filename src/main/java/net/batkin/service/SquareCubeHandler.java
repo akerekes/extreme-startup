@@ -15,13 +15,20 @@ public class SquareCubeHandler implements QuestionHandler {
         if (largest.matches()) {
             String g = largest.group(1);
             String[] is = g.split(", ");
+            StringBuilder builder = new StringBuilder();
             for (String s : is) {
                 s = s.trim();
                 int val = Integer.parseInt(s);
                 if (isSquare(val) && isCube(val)) {
-                    return "" + val;
+                    builder.append(val).append(", ");
                 }
             }
+            if (builder.length() > 0) {
+                return builder.substring(0, builder.length()-2);
+            } else {
+                return "";
+            }
+
         }
         throw new NotAnswerableException();
     }
