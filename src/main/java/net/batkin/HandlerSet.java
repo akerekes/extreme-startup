@@ -18,6 +18,7 @@ public class HandlerSet {
         handlers.add(new LargestHandler());
         handlers.add(new SquareCubeHandler());
         handlers.add(new PrimeHandler());
+        handlers.add(new MultiOperatorHandler());
         handlers.add(new FibHandler());
 
         SimpleHandler simple = new SimpleHandler();
