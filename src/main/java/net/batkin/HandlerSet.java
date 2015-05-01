@@ -3,8 +3,6 @@ package net.batkin;
 import net.batkin.service.*;
 import org.springframework.stereotype.Component;
 
-import javax.xml.ws.WebServiceException;
-
 @Component
 public class HandlerSet {
 
@@ -22,7 +20,7 @@ public class HandlerSet {
                 // Ignore
             }
         }
-        throw new WebServiceException("I don't know how to answer");
+        return "";
     }
 
 }
