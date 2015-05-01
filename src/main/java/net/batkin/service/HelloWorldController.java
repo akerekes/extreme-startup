@@ -1,9 +1,11 @@
 package net.batkin.service;
 
+import net.batkin.HandlerSet;
 import net.batkin.NotAnswerableException;
 import net.batkin.QuestionHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.ws.rs.GET;
@@ -20,7 +22,8 @@ public class HelloWorldController {
 
     public static final Logger logger = LoggerFactory.getLogger(HelloWorldController.class);
 
-    public static QuestionHandler[] handlers = {new PlusHandler(), new LargestHandler(), new SquareCubeHandler(), new PrimeHandler()};
+    @Autowired
+    private HandlerSet set;
 
     @GET
     public String sayHello(@QueryParam("q") String q) {
@@ -30,14 +33,7 @@ public class HelloWorldController {
         }
         String question = parts[1];
 
-        String answer = "unknown";
-        for (QuestionHandler handler : handlers) {
-            try {
-                answer = handler.answerQuestion(question);
-            } catch (NotAnswerableException e) {
-                // Ignore
-            }
-        }
+        String answer = set.answerQuestion(question);
         logger.info("Question: " + question + ", Answer: " + answer);
         return answer;
     }
